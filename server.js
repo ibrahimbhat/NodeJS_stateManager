@@ -2,7 +2,12 @@ var express = require('express');
 var app = express();
 var x;
 app.get('/',function(req,res){
-    res.send(x);
+    if(typeof x == 'undefined')
+    {x="NA"
+     res.send("NA")
+    }
+    else{
+    res.send(x);}
 })
 
 app.get('/state/:tagId', function(req, res) {
